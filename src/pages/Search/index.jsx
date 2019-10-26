@@ -19,13 +19,13 @@ class Search extends Component {
         console.log('event', event.currentTarget.value);
         const {value} = event.currentTarget;
 
-        axios.get('https://api.mercadolibre.com/sites/MLB/search?q=${value}')
+        axios.get(`https://api.mercadolibre.com/sites/MLB/search?q=${value}`)
         .then(({ data }) => {
           // handle success
           //console.log(data);
           this.setState({
               results: data.results,
-          })      
+          });      
         })
         .catch((error) => {
           // handle error
