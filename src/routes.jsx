@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Search from './pages/Search'
+import Product from './pages/Product'
 
 const Routes = () => {
     return (
@@ -12,6 +13,11 @@ const Routes = () => {
                 component={ Search } >
             </Route>
             <Route
+                exatc
+                path={ '/product/:id'}
+                component={ Product }
+            />
+            <Route                
                 component={ () => (<div>Pagina não encontrada!</div>) }>
             </Route>
         </Switch>

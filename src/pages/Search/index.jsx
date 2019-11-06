@@ -1,7 +1,10 @@
 import React, { Component} from 'react';
 import  axios from 'axios';
-import { tsImportEqualsDeclaration } from '@babel/types';
+import {Link} from 'react-router-dom';
 
+const style = {
+    backgroundColor: 'black'
+};
 
 class Search extends Component {
         constructor(){
@@ -12,8 +15,6 @@ class Search extends Component {
 
             //this.onSearch = this.onSearch.bind(this);
         }
-
-
 
     onSearch = (event) => {
         console.log('event', event.currentTarget.value);
@@ -40,6 +41,9 @@ class Search extends Component {
         return (
             <li key={`item_${item.id}`} >
                 { item.title}
+                <Link style={style } to={ `/product/${item.id}`}>
+                    Produto encontrado! 
+                </Link>
             </li>
         );
     }
